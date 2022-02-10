@@ -1,0 +1,181 @@
+country_codes = {'Finland': 'fi', 'South Africa': 'za', 'Nepal': 'np'} #Creating a Dictionary Ashley Allen
+
+country_codes
+{'Finland': 'fi', 'South Africa': 'za', 'Nepal': 'np'}
+
+len(country_codes) #Determining if a Dictionary is Empty 
+3
+
+if country_codes:
+    print('country_codes is not empty')
+else: 
+    print('country_codes is empty')
+country_codes is not empty
+
+country_codes.clear()
+
+if country_codes:
+    print('country_codes is not empty')
+else: 
+    print('country_codes is empty')
+country_codes is empty
+
+states = {'MO': 'Missouri', 'KS': 'Kansas', 'AZ': 'Arizona'} #Self Check, 6.2.1
+
+states
+{'MO': 'Missouri', 'KS': 'Kansas', 'AZ': 'Arizona'}
+
+days_per_month = {'January': 31, 'February': 28, 'March': 31} #6.2.2 Iterating through a Dictionary 
+
+days_per_month
+{'January': 31, 'February': 28, 'March': 31}
+
+for month, days in days_per_month.items(): #Ashley Allen
+    print(f'{month} has {days} days')
+January has 31 days
+February has 28 days
+March has 31 days
+
+roman_numerals = {'I': 1, 'II': 2, 'III': 3, 'V': 5, 'X': 100} #6.2.3 Basic Dictonary Opertaions 
+
+roman_numerals
+{'I': 1, 'II': 2, 'III': 3, 'V': 5, 'X': 100}
+
+roman_numerals['V'] #Accessing the Value Associated with a Key
+5
+
+roman_numerals['X'] = 10 #Updating the Value of an Existing Key-Value Pair 
+
+roman_numerals
+{'I': 1, 'II': 2, 'III': 3, 'V': 5, 'X': 10}
+
+roman_numerals['L'] = 50 #Adding a New Key-Value Pair 
+
+roman_numerals
+{'I': 1, 'II': 2, 'III': 3, 'V': 5, 'X': 10, 'L': 50}
+
+del roman_numerals['III'] #Removing a Key-Value Pair, pop
+
+roman_numerals
+{'I': 1, 'II': 2, 'V': 5, 'X': 10, 'L': 50}
+
+roman_numerals.pop('X')
+10
+
+roman_numerals
+{'I': 1, 'II': 2, 'V': 5, 'L': 50}
+
+roman_numerals.get('III') #Attempting to Access a Nonexistent Key Ashley Allen
+
+roman_numerals.get('III', 'III not in dictionary')
+'III not in dictionary'
+
+roman_numerals.get('V')
+5
+
+'V' in roman_numerals # Test Whether a Dictionary Contains a Specified Key 
+True
+
+'III' in roman_numerals
+False
+
+'III' not in roman_numerals
+True
+
+roman_numerals = {'I': 1, 'II': 2, 'III': 3, 'V': 5, 'X': 100} #Self Check 
+
+roman_numerals['X'] = 10
+
+roman_numerals
+{'I': 1, 'II': 2, 'III': 3, 'V': 5, 'X': 10}
+
+months = {'January': 1, 'Febuary': 2, 'March': 3}
+
+for month_name in months.keys():
+    print(month_name, end=' ')
+January Febuary March 
+
+for month_number in months.values():
+    print(month_number, end=' ')
+1 2 3 
+
+months_view = months.keys() # Dictonary Views Ashley Allen 
+
+for key in months_view: 
+    print(key, end=' ')
+January Febuary March 
+
+months['December'] = 12
+
+months
+{'January': 1, 'Febuary': 2, 'March': 3, 'December': 12}
+
+for key in months_view:
+    print(key, end=' ')
+January Febuary March December 
+
+list(months.keys()) #Convertng Dictionary Keys, Values and Key-Value Pairs for lists
+['January', 'Febuary', 'March', 'December']
+
+list(months.values())
+[1, 2, 3, 12]
+
+list(months.items())
+[('January', 1), ('Febuary', 2), ('March', 3), ('December', 12)]
+
+for month_name in sorted(months.keys()): #Processing Keys in Sorted Order
+    print(month_name, end=' ')
+December Febuary January March 
+
+country_capitals1 = {'Belgium': 'Brussels', 'Haiti': 'Port-au-Prince'} #Dictionary Comparisions 
+
+country_capitals2 = {'Nepal': 'Kathmandu', 'Uruguay': 'Montevideo'}
+
+country_capitals3 = {'Haiti': 'Port-au-Prince', 'Belgium': 'Brussels'}
+
+country_capitals1 == country_capitals2 #Ashley Allen
+False
+
+country_capitals1 == country_capitals3
+True
+
+country_capitals1 != country_capitals2
+True
+
+from collections import Counter #Python Standard Library Module collections  Ashley Allen
+
+text = ('this is sample text with several words ''this is more sample text with some different words''this text is also sample text with more words')
+
+counter = Counter(text.split())
+
+for word, count in sorted(counter.items()):
+    print(f'{word:<12}{count}')
+also        1
+different   1
+is          3
+more        2
+sample      3
+several     1
+some        1
+text        4
+this        2
+with        3
+words       2
+wordsthis   1
+
+country_codes = {} #Dictionary Method update
+
+country_codes.update({'South Africa': 'za'})
+
+country_codes
+{'South Africa': 'za'}
+
+country_codes.update(Australia='ar')
+
+country_codes
+{'South Africa': 'za', 'Australia': 'ar'}
+
+country_codes.update(Australia='au')
+
+country_codes
+{'South Africa': 'za', 'Australia': 'au'}
