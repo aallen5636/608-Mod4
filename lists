@@ -1,0 +1,78 @@
+c = [-45, 6, 0, 72, 1543] 
+
+c
+[-45, 6, 0, 72, 1543]
+
+c[0]
+-45
+
+c[4]
+1543
+
+len(c)
+5
+
+c[-1]
+1543
+
+c[100]
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+/var/folders/j9/p2z4m07x03nfsllr8pf3vf1r0000gn/T/ipykernel_33197/2687931364.py in <module>
+----> 1 c[100]
+
+IndexError: list index out of range
+
+c[0] + c[1] + c[2]
+-39
+
+a_list = []
+
+for number in range(1, 6):
+    a_list += [number]
+
+a_list
+[1, 2, 3, 4, 5]
+
+list1 = [10, 20, 30]
+
+list2 = [40, 50]
+
+concatenated_list = list1 + list2
+
+concatenated_list
+[10, 20, 30, 40, 50]
+
+for i in range(len(concatenated_list)):
+    print(f'{i}: {concatenated_list[i]}')
+0: 10
+1: 20
+2: 30
+3: 40
+4: 50
+
+a = [1, 2, 3]
+b = [1, 2, 3]
+c = [1, 2, 3, 4]
+
+a == b 
+True
+
+a == c
+False
+
+a < c
+True
+
+c >= b
+True
+
+def cube_list(values):
+    for i in range(len(values)):
+        values[i] **= 3
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+cube_list(numbers)
+
+numbers
+[1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]
