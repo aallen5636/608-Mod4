@@ -1,0 +1,170 @@
+colors = {'red', 'orange', 'yellow', 'green', 'red', 'blue'} #Creating a Set with Curly Braces
+
+colors
+{'blue', 'green', 'orange', 'red', 'yellow'}
+
+len(colors) #Determining a Sets Length
+5
+
+'red' in colors #Checking Whether a Value is in a Set
+True
+
+'purple' in colors
+False
+
+'purple' not in colors
+True
+
+for color in colors: #Iterating Through a Set 
+    print(color.upper(), end=' ')
+BLUE RED YELLOW GREEN ORANGE 
+
+numbers = list(range(10)) + list(range(5)) #Creating a Set with the Built-In set Function 
+
+numbers
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4]
+
+set(numbers)
+{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+set()
+set()
+
+text = 'to be or not to be that is the question' #6.3 Self Check 
+
+unique_words = set(text.split())
+
+for word in sorted(unique_words):
+    print(word, end=' ')
+be is not or question that the to 
+
+{1, 3, 5} == {3, 5, 1} 
+True
+
+{1, 3, 5} != {3, 5, 1}
+False
+
+{1, 3, 5} < {3, 5, 1}
+False
+
+{1, 3, 5} < {7, 3, 5, 1}
+True
+
+{1, 3, 5} <= {3, 5, 1}
+True
+
+{1, 3} <= {3, 5, 1}
+True
+
+{1, 3, 5}. issubset({3, 5, 1}) 
+True
+
+{1, 2}. issubset({3, 5, 1}) 
+False
+
+{1, 3, 5} > {3, 5, 1}
+False
+
+{1, 3, 5, 7} > {3, 5, 1} 
+True
+
+{1, 3, 5} >= {3, 5, 1} 
+True
+
+{1, 3, 5} >= {3, 1} 
+True
+
+{1, 3} >= {3, 1, 7} 
+False
+
+{1, 3, 5}.issuperset({3, 5, 1})
+True
+
+{1, 3, 5}.issuperset({3, 2})
+False
+
+set('abc def ghi jkl mno').issuperset('hi mom') #6.3.1 Self Check 
+True
+
+{1, 3, 5} | {2, 3, 4} #Mathematical Set Operations 
+{1, 2, 3, 4, 5}
+
+{1, 3, 5}.union([20, 20, 3, 40, 40])
+{1, 3, 5, 20, 40}
+
+{1, 3, 5} & {2, 3, 4}
+{3}
+
+{1, 3, 5}.intersection([1, 2, 2, 3, 3, 4, 4])
+{1, 3}
+
+{1, 3, 5} - {2, 3, 4}
+{1, 5}
+
+{1, 3, 5, 7}.difference([2, 2, 3, 3, 4, 4])
+{1, 5, 7}
+
+{1, 3, 5} ^ {2, 3, 4}
+{1, 2, 4, 5}
+
+{1, 3, 5, 7}.symmetric_difference([2, 2, 3, 3, 4, 4])
+{1, 2, 4, 5, 7}
+
+{1, 3, 5}.isdisjoint({2, 3, 4})
+False
+
+{1, 3, 5}.isdisjoint({4, 6, 1})
+False
+
+{10, 20, 30} - {5, 10, 15, 20} #6.3.2 Self Check 
+{30}
+
+{10, 20, 30} ^ {5, 10, 15, 20}
+{5, 15, 30}
+
+{10, 20, 30} | {5, 10, 15, 20}
+{5, 10, 15, 20, 30}
+
+{10, 20, 30} & {5, 10, 15, 20}
+{10, 20}
+
+numbers = {1, 3, 5} #Mutable Set Operations and Methods 
+
+numbers |= {2, 3, 4}
+
+numbers 
+{1, 2, 3, 4, 5}
+
+numbers.update(range(10))
+
+numbers
+{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+numbers.add(17) #Methods for Adding and Removing Elements
+numbers.add(3)
+
+numbers
+{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 17}
+
+numbers.remove(3)
+
+numbers
+{0, 1, 2, 4, 5, 6, 7, 8, 9, 17}
+
+numbers.pop()
+0
+
+numbers
+{1, 2, 4, 5, 6, 7, 8, 9, 17}
+
+numbers.clear()
+
+numbers
+set()
+
+numbers = [1, 2, 2, 3, 4, 5, 6, 6 ,7, 8, 9, 10, 10] #Set Comprehensions 
+
+evens = {item for item in numbers if item % 2 == 0}
+
+evens
+{2, 4, 6, 8, 10}
